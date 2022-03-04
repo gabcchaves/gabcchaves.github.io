@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/gabcchaves/gabcchaves.github.io/issues"
   },
-  "homepage": "https://github.com/gabcchaves/gabcchaves.github.io#readme",
-  "dependencies": {
-    "jquery": "^3.6.0"
-  }
+  "homepage": "https://github.com/gabcchaves/gabcchaves.github.io#readme"
 }
