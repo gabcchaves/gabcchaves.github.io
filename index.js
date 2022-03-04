@@ -21,3 +21,9 @@ $('#contactLink').on('click', () => {
 		scrollTop: $('#contact').offset().top-8*vhUnit
 	}, null);
 });
+
+// Project lists settings
+$('.projectList').css({
+	'max-height': '75vh',
+	'overflow': 'scroll'
+});
