@@ -8,36 +8,66 @@
 	<body id="index-page">
 		<!-- Profile side bar -->
 		<div id="profile-area">
-			<img src="img/gabriel.jpg" alt="Gabriel Chaves" width="200">
-			<h3>Gabriel Costa Chaves</h3>
-			<h4>Software developer, back end web developer.</h4>
+
+			<div class="profile-intro">
+				<img class="profile-picture" src="img/gabriel.jpg" alt="Gabriel Chaves" width="200">
+				<h3>Gabriel Costa Chaves</h3>
+				<h4>Software developer, back end web developer.</h4>
+			</div>
+
+			<h4>Main technologies</h4>	
 			<div class="technologies">
-				<h4>Main technologies</h4>	
-				<img src="https://img.shields.io/badge/-HTML5-orange">
-				<img src="https://img.shields.io/badge/-CSS3-orange">
-				<img src="https://img.shields.io/badge/-JavaScript-orange">
-				<img src="https://img.shields.io/badge/-PHP-orange">
-				<img src="https://img.shields.io/badge/-MariaDB-orange">
-				<img src="https://img.shields.io/badge/-SQLite-orange">
+				<img class="tech-badge" src="https://img.shields.io/badge/-HTML5-orange">
+				<img class="tech-badge" src="https://img.shields.io/badge/-CSS3-orange">
+				<img class="tech-badge" src="https://img.shields.io/badge/-JavaScript-orange">
+				<img class="tech-badge" src="https://img.shields.io/badge/-PHP-orange">
+				<img class="tech-badge" src="https://img.shields.io/badge/-MariaDB-orange">
+				<img class="tech-badge" src="https://img.shields.io/badge/-SQLite-orange">
 			</div>
+
+			<h4>Contact</h4>
 			<div class="contact">
-				<h4>Contact</h4>
-				<a href="https://t.me/gabcchaves"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"></a>
-				<a href="https://www.linkedin.com/gabcchaves"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-				<a href="https://www.instagram.com/gabcchaves01/"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"></a>
+				<a href="https://t.me/gabcchaves"><img class="badge" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"></a>
+				<a href="https://www.linkedin.com/gabcchaves"><img class="badge" src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+				<a href="https://www.instagram.com/gabcchaves01/"><img class="badge" src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"></a>
+				<small>gabcchaves@zohomail.com</small>
 			</div>
+
 		</div>
 
 		<!-- Projects area -->
 		<div id="projects-area">
-			<div class="navbar">
+			<header class="projects-header">
 				<h3>Projects</h3>
-				<a href="#">Front end</a>
-				<a href="#">Back end</a>
-				<a href="#">Full stack</a>
-			</div>
+				<div class="navbar">
+					<input onclick="switchStack('frontend')" id="ffrontend" type="radio" name="stack" href="#">
+					<label for="ffrontend">Front end</label>
+					<input onclick="switchStack('backend')" id="fbackend" type="radio" name="stack" href="#">
+					<label for="fbackend">Back end</label>
+					<input onclick="switchStack('fullstack')" id="ffullstack" type="radio" name="stack" href="#">
+					<label for="ffullstack">Full stack</label>
+				</div>
+			</header>
 			<div class="projects">
+				<!-- Front end projects -->
+				<div id="frontend">
+					<div class="project">
+						<a href="https://gabcchaves.github.io/Profile-Card-Component"></a>
+						<img class="project-preview-img" src="https://raw.githubusercontent.com/gabcchaves/Profile-Card-Component/main/preview.png">
+						<h4 class="project-name">Profile-Card-Component</h4>
+					</div>
+				</div>
+
+				<!-- Back end projects -->
+				<div id="backend">
+				</div>
+
+				<!-- Full stack projects -->
+				<div id="fullstack">
+				</div>
+
 			</div>
 		</div>
+		<script src="src/index.js"></script>
 	</body>
 </html>
