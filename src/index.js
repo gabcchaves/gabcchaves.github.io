@@ -19,9 +19,9 @@ function loadProjects(id) {
 		for (let i = 0; i < projects.length; i++) {
 			document.getElementById(id).innerHTML += `
 				<div class="project">
-					<a href="${projects[i].url}"></a>
-					<img src="img/${projects[i].img}">
-					<h4>${projects[i].title}</h4>
+					<a href="${projects[id][i].url}"></a>
+					<img src="${projects[id][i].img}">
+					<h4>${projects[id][i].title}</h4>
 				</div>
 			`;
 		}

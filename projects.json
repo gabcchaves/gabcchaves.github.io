@@ -1,7 +1,50 @@
 [
-	{
-		"title": "Testimonials Grid Section",
-		"url": "https://gabcchaves.github.io/Testimonials-grid-section/",
-		"img": "img/testimonials-grid-section.png"
-	}
+	"frontend": [
+		{
+			"title": "Testimonials Grid Section",
+			"url": "https://gabcchaves.github.io/Testimonials-grid-section/",
+			"img": "img/testimonials-grid-section.png"
+		},
+		{
+			"title": "Profile Card Component",
+			"url": "https://gabcchaves.github.io/Profile-Card-Component/",
+			"img": "img/profile-card-component.png"
+		},
+		{
+			"title": "3 Column Preview Card Component",
+			"url": "https://gabcchaves.github.io/3-column-preview-card-component/",
+			"img": "img/3-column-preview-card-component.png"
+		},
+		{
+			"title": "Login Page",
+			"url": "https://gabcchaves.github.io/login-page/",
+			"img": "img/login-page.png"
+		},
+		{
+			"title": "Registration Page",
+			"url": "https://gabcchaves.github.io/registration-page/",
+			"img": "img/registration-page.png"
+		},
+		{
+			"title": "NFT Preview Card Component",
+			"url": "https://gabcchaves.github.io/nft-preview-card-component/",
+			"img": "img/nft-preview-card-component.png"
+		},
+		{
+			"title": "QR Code Component",
+			"url": "https://gabcchaves.github.io/qr-code-component/",
+			"img": "img/qr-code-component.png"
+		},
+		{
+			"title": "Wiki Page",
+			"url": "https://gabcchaves.github.io/wiki-page/",
+			"img": "img/wiki-page.png"
+		},
+	],
+	"backend": [
+
+	],
+	"fullstack": [
+
+	]
 ]
