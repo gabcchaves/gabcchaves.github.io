@@ -1,0 +1,132 @@
+@import url('http://fonts.cdnfonts.com/css/fira-sans');
+
+/* Predefinitions */
+
+html, body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	color: navy;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Profile side bar */
+#profile-area {
+	background-color: #006982;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	padding: 2% 2%;
+	width: 20%;
+	text-align: center;
+}
+
+.profile-intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 20%;
+	flex-grow: 1;
+}
+
+.profile-intro h3, .profile-intro h4 {
+	margin: 2%;
+}
+
+.profile-picture {
+	width: 150px;
+	border-radius: 50%;
+	border: 2px solid white;
+}
+
+.technologies {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.tech-badge {
+	margin: 2px;
+}
+
+.contact {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.badge {
+	width: 100%;
+}
+
+/* Projects area */
+#projects-area {
+	background-color: #f7f7f7;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-content: stretch;
+}
+
+#projects-area .projects-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#projects-area .projects-header .navbar input[type=radio] {
+	color: gray;
+	accent-color: darkorange;
+}
+
+#projects-area .projects-header .navbar input[type=radio]:hover {
+	color: gray;
+}
+
+#projects-area .projects-header .navbar input[type=radio]:checked + label {
+	color: darkorange;
+}
+
+#projects-area .project {
+	display: flex;
+	width: 30%;
+	border: 1px solid lightgray;
+	border-radius: 10px;
+	color: navy;
+	background-color: white;
+	margin: 1%;
+	box-shadow: 1px 1px 1px lightgray, -1px 0 1px lightgray;
+	padding: 4px;
+	transition: 0.2s;
+	position: relative;
+}
+
+#projects-area .project a {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#projects-area .project:hover {
+	color: orange;
+	border: 1px solid lightyellow;
+}
+
+#projects-area .project-name {
+	width: 80%;
+	text-align: center;
+}
+
+.project-preview-img {
+	width: 100px;
+	border-radius: inherit;
+	border: inherit;
+}
