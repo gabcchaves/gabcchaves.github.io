@@ -1,3 +1,24 @@
 [submodule "Testimonials-grid-section"]
 	path = Testimonials-grid-section
 	url = git@github.com:gabcchaves/Testimonials-grid-section.git
+[submodule "Profile-Card-Component"]
+	path = Profile-Card-Component
+	url = git@github.com:gabcchaves/Profile-Card-Component.git
+[submodule "3-column-preview-card-component"]
+	path = 3-column-preview-card-component
+	url = git@github.com:gabcchaves/3-column-preview-card-component.git
+[submodule "login-page"]
+	path = login-page
+	url = git@github.com:gabcchaves/login-page.git
+[submodule "registration-page"]
+	path = registration-page
+	url = git@github.com:gabcchaves/registration-page.git
+[submodule "wiki-page"]
+	path = wiki-page
+	url = git@github.com:gabcchaves/wiki-page.git
+[submodule "qr-code-component"]
+	path = qr-code-component
+	url = git@github.com:gabcchaves/qr-code-component.git
+[submodule "nft-preview-card-component"]
+	path = nft-preview-card-component
+	url = git@github.com:gabcchaves/nft-preview-card-component.git
