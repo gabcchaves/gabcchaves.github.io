@@ -14,8 +14,17 @@ function switchStack(id) {
 function loadProjects(id) {
 	const xmlhttp = new XMLHttpRequest();
 	xmlhttp.onload = function() {
-		const myObj = JSON.parse(this.responseText);
-		console.log(myObj);
+		const projects = JSON.parse(this.responseText);
+		document.getElementById(id).innerHTML = "";
+		for (let i = 0; i < projects.length; i++) {
+			document.getElementById(id).innerHTML += `
+				<div class="project">
+					<a href="${projects[i].url}"></a>
+					<img src="img/${projects[i].img}">
+					<h4>${projects[i].title}</h4>
+				</div>
+			`;
+		}
 	};
 	xmlhttp.open("GET", "projects.json");
 	xmlhttp.send();
