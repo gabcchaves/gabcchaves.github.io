@@ -15,7 +15,6 @@ function loadProjects(id) {
 	const xmlhttp = new XMLHttpRequest();
 	xmlhttp.onload = function() {
 		const myObj = JSON.parse(this.responseText);
-		//document.getElementById("demo").innerHTML = myObj;
 		console.log(myObj);
 	};
 	xmlhttp.open("GET", "projects.json");
