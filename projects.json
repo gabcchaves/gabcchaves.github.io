@@ -39,12 +39,6 @@
 			"title": "Wiki Page",
 			"url": "https://gabcchaves.github.io/wiki-page/",
 			"img": "img/wiki-page.png"
-		},
-	],
-	"backend": [
-
-	],
-	"fullstack": [
-
+		}
 	]
 }
