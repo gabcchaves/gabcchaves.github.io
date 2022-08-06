@@ -15,7 +15,6 @@ function loadProjects(id) {
 	const xmlhttp = new XMLHttpRequest();
 	xmlhttp.onload = function() {
 		const projects = JSON.parse(this.responseText);
-		document.getElementById(id).innerHTML = "";
 		for (let i = 0; i < projects.length; i++) {
 			document.getElementById(id).innerHTML += `
 				<div class="project">
