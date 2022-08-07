@@ -40,10 +40,11 @@ function createProjectCard(projectInfo) {
 
 	cardInfo.childNodes[0].appendChild(document.createTextNode(projectInfo.title));
 	cardInfo.childNodes[1].appendChild(document.createTextNode(projectInfo.description));
-	cardInfo.childNodes[2].appendChild(document.createTextNode(projectInfo.url));
+	cardInfo.childNodes[2].href = projectInfo.url;
 	cardInfo.childNodes[0].className = "project-title";
 	cardInfo.childNodes[1].className = "project-description";
 	cardInfo.childNodes[2].className = "project-link";
+	cardInfo.childNodes[2].classList.add("div-link");
 
 	// Assemble the card
 	let card = document.createElement("div");
