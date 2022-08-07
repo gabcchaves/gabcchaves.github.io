@@ -21,15 +21,32 @@ function loadProjects() {
 
 // Create a project card
 function createProjectCard(projectInfo) {
-	let node = document.createElement("div");
-	node.innerHTML = `
-		<div class="project-img"><img src="${projectInfo.img}"></div>
-		<div class="project-description">
-			<h3>${projectInfo.title}</h3>
-			<a href="${projectInfo.url}"</a>
-		</div>
-	`;
-	return node;
+	// Card image
+	let cardImage = document.createElement("div");
+	cardImage.appendChild(document.createElement("img"));
+	cardImage.firstChild.className = "project-img";
+	cardImage.firstChild.src = projectInfo.img;
+
+	// Card description
+	let cardInfo = document.createElement("div");
+	cardInfo.appendChild(document.createElement("h4"));
+	cardInfo.appendChild(document.createElement("p"));
+	cardInfo.appendChild(document.createElement("a"));
+
+	cardInfo.childNodes[0].appendChild(document.createTextNode(projectInfo.title));
+	cardInfo.childNodes[1].appendChild(document.createTextNode(projectInfo.description));
+	cardInfo.childNodes[2].appendChild(document.createTextNode(projectInfo.url));
+	cardInfo.childNodes[0].className = "project-title";
+	cardInfo.childNodes[1].className = "project-description";
+	cardInfo.childNodes[2].className = "project-link";
+
+	// Assemble the card
+	let card = document.createElement("div");
+	card.appendChild(cardImage);
+	card.appendChild(cardInfo);
+	card.className = "project-card";
+
+	return card;
 }
 
 // Fetch project informations from JSON
