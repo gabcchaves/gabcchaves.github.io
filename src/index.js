@@ -12,6 +12,11 @@ function loadProjects() {
 
 	// Get active stacks
 	let stacks = document.querySelectorAll('input[name=stacks]:checked');
+
+	// If no checkboxes are checked, then display all projects
+	if  (stacks.length == 0) {
+		stacks = document.querySelectorAll('input[name=stacks]');
+	}
 	
 	// Read projects from JSON and display them on page
 	fetchJSONFile('projects.json', function(data){
