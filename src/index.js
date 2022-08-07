@@ -1,5 +1,10 @@
 "use strict";
 
+// Load the projects when page is loaded
+document.addEventListener('DOMContentLoaded', () => {
+	loadProjects();
+});
+
 // Load projects
 function loadProjects() {
 	// Remove currently shown projects
