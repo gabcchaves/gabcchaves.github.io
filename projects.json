@@ -41,6 +41,12 @@
 			"url": "https://gabcchaves.github.io/interactive-rating-component-main",
 			"img": "https://raw.githubusercontent.com/gabcchaves/interactive-rating-component-main/main/screenshot.png",
 			"description": "Interactive rating component. Front end project from FrontendMentor."
+		},
+		{
+			"title": "3 Column Preview Card Component",
+			"url": "https://gabcchaves.github.io/3-column-preview-card-component-main",
+			"img": "https://raw.githubusercontent.com/gabcchaves/3-column-preview-card-component-main/main/screenshot.png",
+			"description": "3 column preview cards component."
 		}
 	]
 }
