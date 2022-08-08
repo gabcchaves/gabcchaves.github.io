@@ -35,6 +35,12 @@
 			"url": "https://gabcchaves.github.io/qr-code-component/",
 			"img": "img/qr-code-component.png",
 			"description": "Simple QR code card."
+		},
+		{
+			"title": "Interactive Rating Component",
+			"url": "https://gabcchaves.github.io/interactive-rating-component-main",
+			"img": "https://raw.githubusercontent.com/gabcchaves/interactive-rating-component-main/main/screenshot.png",
+			"description": "Interactive rating component. Front end project from FrontendMentor."
 		}
 	]
 }

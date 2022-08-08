@@ -16,3 +16,6 @@
 [submodule "nft-preview-card-component"]
 	path = nft-preview-card-component
 	url = git@github.com:gabcchaves/nft-preview-card-component.git
+[submodule "interactive-rating-component-main"]
+	path = interactive-rating-component-main
+	url = git@github.com:gabcchaves/interactive-rating-component-main.git
