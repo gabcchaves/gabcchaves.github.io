@@ -136,14 +136,14 @@ html, body {
 	margin: 15% 0;
 }
 
-#projects-card .header input[type=text] {
+#projects-card .header #search-project {
 	border: 1px solid lightgray;
 	border-radius: 5px;
 	box-shadow: inset 0 0 1px 0 lightgray;
 	background-color: #f7f7f7;
 }
 
-#projects-card .header input[type=text]:focus {
+#projects-card .header #search-project:focus {
 	outline: none;
 	border: 1px solid teal;
 }

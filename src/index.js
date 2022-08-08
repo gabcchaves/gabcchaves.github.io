@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Load projects
-function loadProjects() {
+function loadProjects(pattern) {
 	// Remove currently shown projects
 	document.getElementById('projects').innerHTML = '';
 
@@ -22,8 +22,22 @@ function loadProjects() {
 	fetchJSONFile('projects.json', function(data){
 		for (let i = 0; i < stacks.length; i++) {
 			let currStack = data[stacks[i].id];
-			for (let j = 0; j < currStack.length; j++) {
-				document.getElementById('projects').appendChild(createProjectCard(currStack[j]));
+
+			// Check whether currStack is defined or not
+			if (currStack === undefined) break;
+
+			// Check for projects based on given pattern
+			if (pattern !== undefined) {
+				let regex = new RegExp(pattern, 'gi');
+				for (let j = 0; j < currStack.length; j++) {
+					if (regex.test(currStack[j].title)) {
+						document.getElementById('projects').appendChild(createProjectCard(currStack[j]));
+					}
+				}
+			} else {
+				for (let j = 0; j < currStack.length; j++) {
+					document.getElementById('projects').appendChild(createProjectCard(currStack[j]));
+				}
 			}
 		}
 	});
