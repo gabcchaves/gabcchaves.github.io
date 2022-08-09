@@ -22,3 +22,6 @@
 [submodule "3-column-preview-card-component-main"]
 	path = 3-column-preview-card-component-main
 	url = git@github.com:gabcchaves/3-column-preview-card-component-main.git
+[submodule "stats-preview-card-component-main"]
+	path = stats-preview-card-component-main
+	url = git@github.com:gabcchaves/stats-preview-card-component-main.git

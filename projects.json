@@ -47,6 +47,12 @@
 			"url": "https://gabcchaves.github.io/3-column-preview-card-component-main",
 			"img": "https://raw.githubusercontent.com/gabcchaves/3-column-preview-card-component-main/main/screenshot.png",
 			"description": "3 column preview cards component."
+		},
+		{
+			"title": "Stats Preview Card Component",
+			"url": "https://gabcchaves.github.io/stats-preview-card-component-main",
+			"img": "https://raw.githubusercontent.com/gabcchaves/stats-preview-card-component-main/master/screenshot.pn",
+			"description": "Stats preview card component."
 		}
 	]
 }
