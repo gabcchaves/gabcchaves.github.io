@@ -53,6 +53,12 @@
 			"url": "https://gabcchaves.github.io/stats-preview-card-component-main",
 			"img": "https://raw.githubusercontent.com/gabcchaves/stats-preview-card-component-main/master/screenshot.png",
 			"description": "Stats preview card component."
+		},
+		{
+			"title": "Product Preview Card Component",
+			"url": "https://gabcchaves.github.io/product-preview-card-component-main",
+			"img": "https://raw.githubusercontent.com/gabcchaves/product-preview-card-component-main/master/screenshot.png",
+			"description": "Product preview card component."
 		}
 	]
 }

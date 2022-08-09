@@ -25,3 +25,6 @@
 [submodule "stats-preview-card-component-main"]
 	path = stats-preview-card-component-main
 	url = git@github.com:gabcchaves/stats-preview-card-component-main.git
+[submodule "product-preview-card-component-main"]
+	path = product-preview-card-component-main
+	url = git@github.com:gabcchaves/product-preview-card-component-main.git
