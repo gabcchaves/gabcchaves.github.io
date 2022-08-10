@@ -14,6 +14,16 @@ html, body {
 	width: 100%;
 	height: 100%;
 	font-family: 'Fira Sans';
+	color: var(--dark-gray);
+	display: flex;
+}
+
+
+#content-area {
+	padding: 0 2vw;
+	overflow: scroll;
+	flex: 1;
+	background-color: var(--white-smoke);
 }
 
 .content-nav {
@@ -22,12 +32,7 @@ html, body {
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-}
-
-.content-nav * {
-	margin: 0;
-	text-decoration: none;
-	list-style-type: none;
+	flex: 1;
 }
 
 .content-nav a {
@@ -35,6 +40,85 @@ html, body {
 	background-color: var(--wheat);
 	color: var(--dark-blue);
 	padding: 1vh;
+	text-decoration: none;
+}
+
+.content-nav a:hover {
+	background-color: orange;
+}
+
+#projects {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#projects input[type=text] {
+	border: 0.1vw solid lightgray;
+	border-radius: 20px;
+	width: 60%;
+	margin: 2vh;
+}
+
+#projects input[type=text]:hover, #projects input[type=text]:focus {
+	outline: none;
+	border: 0.1vw solid var(--dark-blue);
+}
+
+#stack-checkboxes {
+	display: flex;
+	justify-content: center;
+}
+
+#stack-checkboxes label {
+	margin: 0 2vw;
+}
+
+#project-list {
+	background-color: white;
+	border: 0.1vw solid lightgray;
+	width: 100%;
+	height: 80vh;
+	padding: 1vw;
+	box-sizing: border-box;
+	overflow: scroll;
+}
+
+#profile-area h1 {
+	color: var(--dark-blue);
+	margin: 0;
+}
+
+#profile-area h2 {
+	color: var(--dark-gray);
+	margin: 1vh 0;
+}
+
+.course strong {
+	color: teal;
+}
+	
+h4, h3 {
+	color: var(--dark-blue);
+}
+
+h3 {
+	text-align: center;
+}
+
+.course {
+	margin: 1vh 0;
+	background-color: white;
+	border: 0.1vw solid lightgray;
+	padding: 2vw;
+}
+
+.about-basic table th {
+	text-align: right;
+}
+
+.about-basic table td {
+	padding: 0 0 0 1vw;
 }
 
 /* Mobile style */
@@ -42,6 +126,8 @@ html, body {
 	body {
 		background-color: var(--white-smoke);
 		min-height: 100vh;
+		display: flow-root;
+		scroll-behavior: smooth;
 	}
 	
 	#profile-area, #content-area {
@@ -62,20 +148,9 @@ html, body {
 		border: 1vw solid var(--wheat);
 	}
 
-	#profile-area h1 {
-		color: var(--dark-blue);
-		margin: 0;
-	}
-
-	#profile-area h2 {
-		color: var(--dark-gray);
-		margin: 1vh 0;
-	}
-
 	.content-nav {
 		margin: 1.4vh;
 		font-size: 1.3em;
-		flex: 1;
 	}
 
 	.contact-links {
@@ -83,10 +158,47 @@ html, body {
 	}
 
 	#about {
-		padding: 2vh 0;
+		padding: 1vh 0;
+	}
+	
+	#project-list {
+		margin-bottom: 4vh;
+	}
+}
+
+/* Larger screens style */
+@media screen and (min-width: 800px) {
+	#profile-area {
+		width: 25vw;
+		padding: 1vh 1vw;
+		box-shadow: 0.1vw 0 1vw lightgray;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
-	#about h3 {
-		text-align: center;
+	#profile-picture {
+		width: 10vw;
+		border-radius: 50%;
+		margin: 2vh 0;
+		border: 0.4vw solid var(--wheat);
+	}
+
+	#profile-area h1 {
+		margin-top: 5vh;
+	}
+
+	#content-area {
+		scroll-behavior: smooth;
+		padding-bottom: 2vh;
+	}
+
+	#about {
+		padding: 1vh 0;
+	}
+
+	.contact-links {
+		font-size: 1.8em;
 	}
 }
