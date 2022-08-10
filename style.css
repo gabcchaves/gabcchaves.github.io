@@ -161,7 +161,7 @@ h3 {
 }
 
 /* Mobile style */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1366px) {
 	body {
 		background-color: var(--white-smoke);
 		min-height: 100vh;
@@ -206,7 +206,7 @@ h3 {
 }
 
 /* Larger screens style */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1366px) {
 	#profile-area {
 		width: 25vw;
 		padding: 1vh 1vw;
