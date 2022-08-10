@@ -5,8 +5,7 @@
 		<title>Gabriel Chaves</title>
 		<link rel="stylesheet" media="screen" href="style.css">
 		<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-		<script src="src/index.js">
-		</script>
+		<script src="src/index.js"></script>
 	</head>
 	<body id="index-page">
 		<!-- Profile side bar -->
@@ -117,9 +116,12 @@
 			<section id="projects">
 				<h3>Projects</h3>
 				<div id="stack-checkboxes">
-					<label><input type="checkbox">Front end</label>
-					<label><input type="checkbox">Back end</label>
-					<label><input type="checkbox">Full stack</label>
+					<label><input id="frontend" type="checkbox" name="stacks"
+						onchange="loadProjects();">Front end</label>
+					<label><input id="backend" type="checkbox" name="stacks"
+						onchange="loadProjects();">Back end</label>
+					<label><input id="fullstack" type="checkbox" name="stacks"
+						onchange="loadProjects();">Full stack</label>
 				</div>
 				<input type="text"><br>
 				<div id="project-list">

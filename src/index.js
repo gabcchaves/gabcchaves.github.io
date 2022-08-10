@@ -1,14 +1,22 @@
 "use strict";
 
-// Load the projects when page is loaded
+// Fix height mobile bug
+window.addEventListener('resize', () => {
+	// We execute the same script as before
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+// Feed when page is loaded
 document.addEventListener('DOMContentLoaded', () => {
+	document.getElementById('profile-age').appendChild(document.createTextNode(new Date().getFullYear() - 2002));
 	loadProjects();
 });
 
 // Load projects
 function loadProjects(pattern) {
 	// Remove currently shown projects
-	document.getElementById('projects').innerHTML = '';
+	document.getElementById('project-list').innerHTML = '';
 
 	// Get active stacks
 	let stacks = document.querySelectorAll('input[name=stacks]:checked');
@@ -31,12 +39,12 @@ function loadProjects(pattern) {
 				let regex = new RegExp(pattern, 'gi');
 				for (let j = 0; j < currStack.length; j++) {
 					if (regex.test(currStack[j].title)) {
-						document.getElementById('projects').appendChild(createProjectCard(currStack[j]));
+						document.getElementById('project-list').appendChild(createProjectCard(currStack[j]));
 					}
 				}
 			} else {
 				for (let j = 0; j < currStack.length; j++) {
-					document.getElementById('projects').appendChild(createProjectCard(currStack[j]));
+					document.getElementById('project-list').appendChild(createProjectCard(currStack[j]));
 				}
 			}
 		}
@@ -46,10 +54,9 @@ function loadProjects(pattern) {
 // Create a project card
 function createProjectCard(projectInfo) {
 	// Card image
-	let cardImage = document.createElement("div");
-	cardImage.appendChild(document.createElement("img"));
-	cardImage.firstChild.className = "project-img";
-	cardImage.firstChild.src = projectInfo.img;
+	let cardImage = document.createElement("img");
+	cardImage.className = "project-img";
+	cardImage.src = projectInfo.img;
 
 	// Card description
 	let cardInfo = document.createElement("div");
