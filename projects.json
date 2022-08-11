@@ -65,6 +65,12 @@
 			"url": "https://gabcchaves.github.io/order-summary-component-main",
 			"img": "https://raw.githubusercontent.com/gabcchaves/order-summary-component-main/main/screenshot.png",
 			"description": "Order summary component."
+		},
+		{
+			"title": "Login form",
+			"url": "https://gabcchaves.github.io/login-form",
+			"img": "https://raw.githubusercontent.com/gabcchaves/login-form/master/screenshot.png",
+			"description": "Login form."
 		}
 	]
 }
