@@ -37,3 +37,6 @@
 [submodule "faq-accordion-card"]
 	path = faq-accordion-card
 	url = git@github.com:gabcchaves/faq-accordion-card.git
+[submodule "four-card-feature-section"]
+	path = four-card-feature-section
+	url = git@github.com:gabcchaves/four-card-feature-section.git

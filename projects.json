@@ -77,6 +77,12 @@
 			"url": "https://gabcchaves.github.io/faq-accordion-card",
 			"img": "https://raw.githubusercontent.com/gabcchaves/faq-accordion-card/main/screenshot.png",
 			"description": "FAQ accordion card."
+		},
+		{
+			"title": "Four Card Feature Section",
+			"url": "https://gabcchaves.github.io/four-card-feature-section",
+			"img": "https://raw.githubusercontent.com/gabcchaves/four-card-feature-section/main/screenshot.png",
+			"description": Four card feature section."
 		}
 	]
 }
