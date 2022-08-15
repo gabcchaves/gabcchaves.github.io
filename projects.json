@@ -71,6 +71,12 @@
 			"url": "https://gabcchaves.github.io/login-form",
 			"img": "https://raw.githubusercontent.com/gabcchaves/login-form/master/screenshot.png",
 			"description": "Login form."
+		},
+		{
+			"title": "FAQ Accordion Card",
+			"url": "https://gabcchaves.github.io/faq-accordion-card",
+			"img": "https://raw.githubusercontent.com/gabcchaves/faq-accordion-card/main/screenshot.png",
+			"description": "FAQ accordion card."
 		}
 	]
 }

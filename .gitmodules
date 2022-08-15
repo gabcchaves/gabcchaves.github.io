@@ -34,3 +34,6 @@
 [submodule "login-form"]
 	path = login-form
 	url = git@github.com:gabcchaves/login-form.git
+[submodule "faq-accordion-card"]
+	path = faq-accordion-card
+	url = git@github.com:gabcchaves/faq-accordion-card.git
