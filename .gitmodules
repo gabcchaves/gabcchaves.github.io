@@ -40,3 +40,6 @@
 [submodule "four-card-feature-section"]
 	path = four-card-feature-section
 	url = git@github.com:gabcchaves/four-card-feature-section.git
+[submodule "social-proof-section"]
+	path = social-proof-section
+	url = git@github.com:gabcchaves/social-proof-section.git

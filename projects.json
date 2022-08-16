@@ -83,6 +83,12 @@
 			"url": "https://gabcchaves.github.io/four-card-feature-section",
 			"img": "https://raw.githubusercontent.com/gabcchaves/four-card-feature-section/main/screenshot.png",
 			"description": "Four card feature section."
+		},
+		{
+			"title": "Social Proof Section",
+			"url": "https://gabcchaves.github.io/social-proof-section",
+			"img": "https://raw.githubusercontent.com/gabcchaves/social-proof-section/main/screenshot.png",
+			"description": "Social proof section."
 		}
 	]
 }
