@@ -43,3 +43,6 @@
 [submodule "social-proof-section"]
 	path = social-proof-section
 	url = git@github.com:gabcchaves/social-proof-section.git
+[submodule "article-preview-component"]
+	path = article-preview-component
+	url = git@github.com:gabcchaves/article-preview-component.git

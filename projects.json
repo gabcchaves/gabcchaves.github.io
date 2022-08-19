@@ -89,6 +89,12 @@
 			"url": "https://gabcchaves.github.io/social-proof-section",
 			"img": "https://raw.githubusercontent.com/gabcchaves/social-proof-section/main/screenshot.png",
 			"description": "Social proof section."
+		},
+		{
+			"title": "Article Preview Component",
+			"url": "https://gabcchaves.github.io/article-preview-component",
+			"img": "https://raw.githubusercontent.com/gabcchaves/article-preview-component/main/screenshot.png",
+			"description": "Article preview component."
 		}
 	]
 }
