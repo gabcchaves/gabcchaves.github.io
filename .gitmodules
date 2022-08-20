@@ -46,3 +46,6 @@
 [submodule "article-preview-component"]
 	path = article-preview-component
 	url = git@github.com:gabcchaves/article-preview-component.git
+[submodule "base-apparel-coming-soon"]
+	path = base-apparel-coming-soon
+	url = git@github.com:gabcchaves/base-apparel-coming-soon.git

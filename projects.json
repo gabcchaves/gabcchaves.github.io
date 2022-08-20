@@ -95,6 +95,12 @@
 			"url": "https://gabcchaves.github.io/article-preview-component",
 			"img": "https://raw.githubusercontent.com/gabcchaves/article-preview-component/main/screenshot.png",
 			"description": "Article preview component."
+		},
+		{
+			"title": "Base Apparel Coming Soon",
+			"url": "https://gabcchaves.github.io/base-apparel-coming-soon",
+			"img": "https://raw.githubusercontent.com/gabcchaves/base-apparel-coming-soon/main/screenshot.png",
+			"description": "Base apparel coming soon."
 		}
 	]
 }
