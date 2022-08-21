@@ -101,6 +101,12 @@
 			"url": "https://gabcchaves.github.io/base-apparel-coming-soon",
 			"img": "https://raw.githubusercontent.com/gabcchaves/base-apparel-coming-soon/main/screenshot.png",
 			"description": "Base apparel coming soon."
+		},
+		{
+			"title": "Huddle Landing Page With Single Introductory Section",
+			"url": "https://gabcchaves.github.io/huddle-landing-page-with-single-introductory-section",
+			"img": "https://raw.githubusercontent.com/gabcchaves/huddle-landing-page-with-single-introductory-section/main/screenshot.png",
+			"description": "Huddle landing page with single introductory section."
 		}
 	]
 }

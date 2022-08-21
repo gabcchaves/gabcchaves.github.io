@@ -49,3 +49,6 @@
 [submodule "base-apparel-coming-soon"]
 	path = base-apparel-coming-soon
 	url = git@github.com:gabcchaves/base-apparel-coming-soon.git
+[submodule "huddle-landing-page-with-single-introductory-section"]
+	path = huddle-landing-page-with-single-introductory-section
+	url = git@github.com:gabcchaves/huddle-landing-page-with-single-introductory-section.git
