@@ -107,6 +107,12 @@
 			"url": "https://gabcchaves.github.io/huddle-landing-page-with-single-introductory-section",
 			"img": "https://raw.githubusercontent.com/gabcchaves/huddle-landing-page-with-single-introductory-section/main/screenshot.png",
 			"description": "Huddle landing page with single introductory section."
+		},
+		{
+			"title": "Ping Coming Soon Page",
+			"url": "https://gabcchaves.github.io/ping-coming-soon-page",
+			"img": "",
+			"description": "Ping coming soon page."
 		}
 	]
 }

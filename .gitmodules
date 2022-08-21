@@ -52,3 +52,6 @@
 [submodule "huddle-landing-page-with-single-introductory-section"]
 	path = huddle-landing-page-with-single-introductory-section
 	url = git@github.com:gabcchaves/huddle-landing-page-with-single-introductory-section.git
+[submodule "ping-coming-soon-page"]
+	path = ping-coming-soon-page
+	url = git@github.com:gabcchaves/ping-coming-soon-page.git
