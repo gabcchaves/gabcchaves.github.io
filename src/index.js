@@ -28,7 +28,7 @@ function loadProjects(pattern) {
 	
 	// Read projects from JSON and display them on page
 	fetchJSONFile('projects.json', function(data){
-		for (let i = 0; i < stacks.length; i++) {
+		for (let i = stacks.length-1; i >= 0; i--) {
 			let currStack = data[stacks[i].id];
 
 			// Check whether currStack is defined or not
