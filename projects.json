@@ -111,8 +111,14 @@
 		{
 			"title": "Ping Coming Soon Page",
 			"url": "https://gabcchaves.github.io/ping-coming-soon-page",
-			"img": "",
+			"img": "https://raw.githubusercontent.com/gabcchaves/ping-coming-soon-page/main/screenshot.png",
 			"description": "Ping coming soon page."
+		},
+		{
+			"title": "Single Price Grid Component",
+			"url": "https://gabcchaves.github.io/single-price-grid-component",
+			"img": "https://raw.githubusercontent.com/gabcchaves/single-price-grid-component/main/screenshot.png",
+			"description": "Single price grid component."
 		}
 	]
 }

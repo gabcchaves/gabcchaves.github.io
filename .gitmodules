@@ -55,3 +55,6 @@
 [submodule "ping-coming-soon-page"]
 	path = ping-coming-soon-page
 	url = git@github.com:gabcchaves/ping-coming-soon-page.git
+[submodule "single-price-grid-component"]
+	path = single-price-grid-component
+	url = git@github.com:gabcchaves/single-price-grid-component.git
