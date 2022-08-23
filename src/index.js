@@ -28,7 +28,7 @@ function loadProjects(pattern) {
 	
 	// Read projects from JSON and display them on page
 	fetchJSONFile('projects.json', function(data){
-		for (let i = stacks.length-1; i >= 0; i--) {
+		for (let i = 0; i < stacks.length; i++) {
 			let currStack = data[stacks[i].id];
 
 			// Check whether currStack is defined or not
@@ -37,13 +37,13 @@ function loadProjects(pattern) {
 			// Check for projects based on given pattern
 			if (pattern !== undefined) {
 				let regex = new RegExp(pattern, 'gi');
-				for (let j = 0; j < currStack.length; j++) {
+				for (let j = currStack.length - 1; j >= 0; j--) {
 					if (regex.test(currStack[j].title)) {
 						document.getElementById('project-list').appendChild(createProjectCard(currStack[j]));
 					}
 				}
 			} else {
-				for (let j = 0; j < currStack.length; j++) {
+				for (let j = currStack.length - 1; j >= 0; j--) {
 					document.getElementById('project-list').appendChild(createProjectCard(currStack[j]));
 				}
 			}
