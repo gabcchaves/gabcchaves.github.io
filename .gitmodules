@@ -58,3 +58,6 @@
 [submodule "single-price-grid-component"]
 	path = single-price-grid-component
 	url = git@github.com:gabcchaves/single-price-grid-component.git
+[submodule "intro-component-with-signup-form"]
+	path = intro-component-with-signup-form
+	url = git@github.com:gabcchaves/intro-component-with-signup-form.git

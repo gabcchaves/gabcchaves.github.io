@@ -119,6 +119,12 @@
 			"url": "https://gabcchaves.github.io/single-price-grid-component",
 			"img": "https://raw.githubusercontent.com/gabcchaves/single-price-grid-component/main/screenshot.png",
 			"description": "Single price grid component."
+		},
+		{
+			"title": Intro Component With Signup Form",
+			"url": "https://gabcchaves.github.io/intro-component-with-signup-form",
+			"img": "https://raw.githubusercontent.com/gabcchaves/intro-component-with-signup-form/main/screenshot.png",
+			"description": Intro component with signup form."
 		}
 	]
 }
