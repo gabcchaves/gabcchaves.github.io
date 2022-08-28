@@ -131,6 +131,12 @@
 			"url": "https://gabcchaves.github.io/interactive-card-details-form",
 			"img": "https://raw.githubusercontent.com/gabcchaves/interactive-card-details-form/main/screenshot.png",
 			"description": "Interactive card details form."
+		},
+		{
+			"title": "Expenses Chart Component",
+			"url": "https://gabcchaves.github.io/expenses-chart-component",
+			"img": "https://raw.githubusercontent.com/gabcchaves/expenses-chart-component/main/screenshot.png",
+			"description": "Expenses chart component."
 		}
 	]
 }

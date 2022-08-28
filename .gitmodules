@@ -64,3 +64,6 @@
 [submodule "interactive-card-details-form"]
 	path = interactive-card-details-form
 	url = git@github.com:gabcchaves/interactive-card-details-form.git
+[submodule "expenses-chart-component"]
+	path = expenses-chart-component
+	url = git@github.com:gabcchaves/expenses-chart-component.git
