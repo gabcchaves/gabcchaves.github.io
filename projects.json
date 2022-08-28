@@ -125,6 +125,12 @@
 			"url": "https://gabcchaves.github.io/intro-component-with-signup-form",
 			"img": "https://raw.githubusercontent.com/gabcchaves/intro-component-with-signup-form/main/screenshot.png",
 			"description": "Intro component with signup form."
+		},
+		{
+			"title": "Interactive Card Details Form",
+			"url": "https://gabcchaves.github.io/interactive-card-details-form",
+			"img": "https://raw.githubusercontent.com/gabcchaves/interactive-card-details-form/main/screenshot.png",
+			"description": "Interactive card details form."
 		}
 	]
 }

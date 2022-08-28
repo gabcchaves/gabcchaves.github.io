@@ -61,3 +61,6 @@
 [submodule "intro-component-with-signup-form"]
 	path = intro-component-with-signup-form
 	url = git@github.com:gabcchaves/intro-component-with-signup-form.git
+[submodule "interactive-card-details-form"]
+	path = interactive-card-details-form
+	url = git@github.com:gabcchaves/interactive-card-details-form.git
