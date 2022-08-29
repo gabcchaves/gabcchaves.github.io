@@ -143,6 +143,12 @@
 			"url": "https://gabcchaves.github.io/intro-section-with-dropdown-navigation",
 			"img": "https://raw.githubusercontent.com/gabcchaves/intro-section-with-dropdown-navigation/main/screenshot.png",
 			"description": "Intro section with dropdown navigation."
+		},
+		{
+			"title": "Advice generator app",
+			"url": "https://gabcchaves.github.io/advice-generator-app",
+			"img": "https://raw.githubusercontent.com/gabcchaves/advice-generator-app/main/screenshot.png",
+			"description": "Advice generator app."
 		}
 	]
 }
