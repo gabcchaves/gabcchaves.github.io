@@ -67,3 +67,6 @@
 [submodule "expenses-chart-component"]
 	path = expenses-chart-component
 	url = git@github.com:gabcchaves/expenses-chart-component.git
+[submodule "intro-section-with-dropdown-navigation"]
+	path = intro-section-with-dropdown-navigation
+	url = git@github.com:gabcchaves/intro-section-with-dropdown-navigation.git
