@@ -7,126 +7,34 @@
 		<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 		<script src="src/index.js"></script>
 	</head>
-	<body id="index-page">
-		<!-- Profile side bar -->
-		<header id="profile-area">
-			<img id="profile-picture" src="img/gabriel.jpg" width="150">
+	<body id="main-page">
+		<section id="about">
+			<img class="profile-img" src="images/gabriel.jpg" alt="Gabriel" width="250">
 			<h1>Gabriel Costa Chaves</h1>
 			<h2>Software developer</h2>
-			<nav class="content-nav">
-				<a href="#about">About</a></li>
-				<a href="#projects">Projects</a></li>
-			</nav>
-			<nav class="contact-links">
-				<a href="https://t.me/gabcchaves"><i class='bx bxl-telegram' style='color:#000080'  ></i></a>
-				<a href="https://linkedin.com/in/gabcchaves"><i class='bx bxl-linkedin' style='color:#000080' ></i></a>
-				<a href="https://github.com/gabcchaves"><i class='bx bxl-github' style='color:#000080' ></i></a>
-			</nav>
-		</header>
+			<q>I'm a computer science student and software developer. I enjoy
+				programming, and, in terms of career, I would like to work as a
+				full stack or back end web developer.</q>
+			<a href="#">View CV</a>
+		</section>
 
-		<!-- Content area -->
-		<section id="content-area">
-			<section id="about">
-				<h3>About</h3>
-				<section class="about-basic">
-					<h4>Basic information</h4>
-					<table>
-						<tr> <th>Age:</th> <td id="profile-age"></td> </tr>
-						<tr> <th>Location:</th> <td>Santarém, Pará, Brazil</td> </tr>
-						<tr> <th>E-mail:</th> <td>gabcchaves@zohomail.com</td> </tr>
-					</table>
-				</section>
+		<section id="projects">
+			<h3>Projects</h3>
+			<div id="stack-checkboxes">
+				<input id="front-end-checkbox" type="checkbox">
+				<label for="front-end-checkbox">Front end</label>
+				<input id="back-end-checkbox" type="checkbox">
+				<label for="back-end-checkbox">Back end</label>
+				<input id="full-stack-checkbox" type="checkbox">
+				<label for="full-stack-checkbox">Full stack</label>
+			</div>
+			<div id="projects-container">
+			</div>
+		</section>
 
-				<section class="about-education">
-					<h4>Education</h4>
-					<div class="course">
-						<strong>Computer Science</strong><br>
-						UFOPA<br>
-						<em>Oct, 2021 - Ongoing</em>
-					</div>
-
-					<div class="course">
-						<strong>Computer technician integrated into high school</strong><br>
-						IFPA<br>
-						<em>Feb, 2018 - Jun, 2021</em>
-					</div>
-
-					<div class="course">
-						<strong>SQL</strong><br>
-						SoloLearn<br>
-						<em>Dec, 2021</em>
-					</div>
-
-					<div class="course">
-						<strong>JavaScript Algorithms and Data Structures</strong><br>
-						FreeCodeCamp<br>
-						<em>Sep, 2021</em>
-					</div>
-					
-					<div class="course">
-						<strong>PHP Course</strong><br>
-						SoloLearn<br>
-						<em>Sep, 2021</em>
-					</div>
-
-					<div class="course">
-						<strong>Python Core</strong><br>
-						SoloLearn<br>
-						<em>Aug, 2021</em>
-					</div>
-
-					<div class="course">
-						<strong>Python Data Structures</strong><br>
-						SoloLearn<br>
-						<em>Aug, 2021</em>
-					</div>
-
-					<div class="course">
-						<strong>Responsive Web Design</strong><br>
-						SoloLearn<br>
-						<em>Aug, 2021</em>
-					</div>
-
-					<div class="course">
-						<strong>CSS Course</strong><br>
-						SoloLearn<br>
-						<em>Jul, 2021</em>
-					</div>
-					
-					<div class="course">
-						<strong>HTML Course</strong><br>
-						SoloLearn<br>
-						<em>Jul, 2021</em>
-					</div>
-
-					<div class="course">
-						<strong>Java Programming Language - Advanced</strong><br>
-						Bradesco Foundation<br>
-						<em>Apr, 2020</em>
-					</div>
-
-					<div class="course">
-						<strong>Data Modelling</strong><br>
-						Bradesco Foundation<br>
-						<em>Apr, 2020</em>
-					</div>
-				</section>
-			</section>
-
-			<section id="projects">
-				<h3>Projects</h3>
-				<div id="stack-checkboxes">
-					<label><input id="frontend" type="checkbox" name="stacks"
-						onchange="loadProjects();">Front end</label>
-					<label><input id="backend" type="checkbox" name="stacks"
-						onchange="loadProjects();">Back end</label>
-					<label><input id="fullstack" type="checkbox" name="stacks"
-						onchange="loadProjects();">Full stack</label>
-				</div>
-				<input type="text" oninput="loadProjects(this.value)"><br>
-				<div id="project-list">
-				</div>
-			</section>
+		<section id="contact">
+			<a href="#"><i class='bx bxl-linkedin'></i></a>
+			<a href="#"><i class='bx bxl-github' ></i></a>
 		</section>
 	</body>
 </html>
