@@ -149,6 +149,12 @@
 			"url": "https://gabcchaves.github.io/advice-generator-app",
 			"img": "https://raw.githubusercontent.com/gabcchaves/advice-generator-app/main/screenshot.png",
 			"description": "Advice generator app."
+		},
+		{
+			"title": "Time Tracking Dashboard",
+			"url": "https://gabcchaves.github.io/time-tracking-dashboard",
+			"img": "https://raw.githubusercontent.com/gabcchaves/time-tracking-dashboard/main/screenshot.png",
+			"description": "Time tracking dashboad."
 		}
 	]
 }

@@ -73,3 +73,6 @@
 [submodule "advice-generator-app"]
 	path = advice-generator-app
 	url = git@github.com:gabcchaves/advice-generator-app.git
+[submodule "time-tracking-dashboard"]
+	path = time-tracking-dashboard
+	url = git@github.com:gabcchaves/time-tracking-dashboard.git
