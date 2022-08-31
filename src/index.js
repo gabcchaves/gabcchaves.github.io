@@ -31,7 +31,7 @@ function displayProjects(projectsContainer = undefined, stack = undefined, searc
 					);
 				} else {
 					// Displays project if it corresponds to provided search pattern
-					if (data[stack][i]['title'].match(searchPattern, 'gi') != null) {
+					if (data[stack][i]['title'].match(new RegExp(searchPattern, 'gi')) != null) {
 						projectsContainer.appendChild(
 							createProjectCard(
 								data[stack][i]['title'],
@@ -59,7 +59,7 @@ function displayProjects(projectsContainer = undefined, stack = undefined, searc
 						);
 					} else {
 						// Displays project if it corresponds to provided search pattern
-						if (data[currStack][i]['title'].match(searchPattern, 'gi')) {
+						if (data[currStack][i]['title'].match(new RegExp(searchPattern, 'gi'))) {
 							projectsContainer.appendChild(
 								createProjectCard(
 									data[currStack][i]['title'],
