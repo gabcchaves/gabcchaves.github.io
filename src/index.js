@@ -10,10 +10,11 @@ class ProjectList {
 }
 
 // Display project on projects container
-function displayProjects(stack = undefined) {
-	ProjectList.getProjectList().then((data) => {
-		const projectsContainer = document.querySelector("#projects-container");
+function displayProjects(projectsContainer = undefined, stack = undefined) {
+	// Check if projects container has been defined
+	if (projectsContainer === undefined) return false;
 
+	ProjectList.getProjectList().then((data) => {
 		// Only attempt to display projects if provided stack is valid
 		if (stack == "frontend" || stack == "backend" || stack == "fullstack") {
 			projectsContainer.innerHTML = ""; // Clear projects container
@@ -29,7 +30,6 @@ function displayProjects(stack = undefined) {
 			}
 		} else {
 			// Display projects of all stacks
-			projectsContainer.innerHTML = ""; // Clear projects container
 			for (let currStack in data) {
 				for (let i = 0; i < data[currStack].length; i++) {
 					projectsContainer.appendChild(
@@ -77,4 +77,40 @@ function reloadCss() {
 	}
 }
 
-displayProjects();
+// Refresh project list
+function refreshProjectList() {
+	const projectsContainer = document.getElementById("projects-container");
+	const frontEndCheckBox = document.querySelector("#frontend-checkbox");
+	const backEndCheckBox = document.querySelector("#backend-checkbox");
+	const fullStackCheckBox = document.querySelector("#fullstack-checkbox");
+	projectsContainer.innerHTML = "";
+
+	if (frontEndCheckBox.checked) displayProjects(projectsContainer, "frontend");
+	else if (backEndCheckBox.checked) displayProjects(projectsContainer, "backend");
+	else if (fullStackCheckBox.checked) displayProjects(projectsContainer, "fullstack");
+	else  displayProjects(projectsContainer, undefined);
+}
+
+// Assign elements their respective events
+function loadEvents() {
+	refreshProjectList();
+	const frontEndCheckBox = document.querySelector("#frontend-checkbox");
+	const backEndCheckBox = document.querySelector("#backend-checkbox");
+	const fullStackCheckBox = document.querySelector("#fullstack-checkbox");
+
+	frontEndCheckBox.addEventListener("change", () => {
+		refreshProjectList();
+	});
+
+	backEndCheckBox.addEventListener("change", () => {
+		refreshProjectList();
+	});
+
+	fullStackCheckBox.addEventListener("change", () => {
+		refreshProjectList();
+	});
+}
+
+/* Things to take effect on every page refresh */
+// Check if any stack checkbox is checked
+loadEvents();
