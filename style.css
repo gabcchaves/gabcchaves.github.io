@@ -9,6 +9,8 @@ html, body {
 * {
 	font-family: 'Open Sans';
 	font-size: 18px;
+	transition: 0.2s;
+	box-sizing: border-box;
 }
 
 /* Colors */
@@ -23,6 +25,8 @@ html, body {
 body {
 	min-width: 100vw;
 	min-height: 100vh;
+	height: 100vh;
+	width: 100vw;
 	display: grid;
 	grid-template-rows: auto;
 	grid-template-columns: 25% 1fr;
@@ -53,6 +57,7 @@ h2 {
     background-size:	2px 100%;
     background-position: 100% 0;
     background-repeat:	no-repeat;
+	height: 100%;
 }
 
 .contact {
@@ -60,6 +65,7 @@ h2 {
 	justify-content: center;
 	width: 100%;
 	flex: 1;
+	padding: 0;
 }
 
 #about .profile-img {
@@ -83,7 +89,6 @@ h2 {
 	margin: 25% 0;
 	border-radius: 10px;
 	font-weight: bold;
-	transition: 0.2s;
 }
 
 #about > a:hover {
@@ -97,12 +102,12 @@ h2 {
 	overflow: scroll;
 	display: flex;
 	flex-direction: column;
+	min-height: 100vh;
 }
 
 .contact > a > i {
 	font-size: 2rem;
 	color: var(--dark-saphire);
-	transition: 0.2s;
 }
 
 .contact > a > i:hover {
@@ -118,7 +123,7 @@ h2 {
 
 #project-search-field {
 	align-self: center;
-	height: 2%;
+	min-height: 3vh;
 	margin-top: 2%;
 	border: 2px solid #CCC;
 	border-radius: 30px;
@@ -145,20 +150,91 @@ h2 {
 	background-color: #f7f7f7;
 	box-shadow: inset 0 0 5px gray;
 	border-radius: 5px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2%;
+	padding: 2%;
+	box-sizing: border-box;
+	overflow: scroll;
+}
+
+.project-card, .project-card > * {
+	border-radius: 10px;
+}
+
+.project-card {
+	background-color: var(--dark-saphire);
+	color: white;
+	padding: 7%;
+	box-shadow: 0 0 10px #111;
+	text-align: center;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.project-card:hover {
+	background-color: var(--medium-saphire);
+	cursor: pointer;
+}
+
+.project-card-image {
+	width: 100%;
+	height: 40%;
+	display: block;
+}
+
+.project-card-title {
+	font-size: 0.9rem;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.project-card-description {
+	font-size: 0.9rem;
+	color: #DDD;
+}
+
+.project-card-anchor {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
 }
 
 /* Mobile settings */
 @media screen and (max-width: 1080px) {
 	body {
 		display: flex;
+		min-height: 120vh;
 		flex-direction: column;
 		justify-content: space-between;
 	}
 
-
 	#about > * { margin: 0; }
+
+	#projects {
+		margin: 10% 0;
+	}
 
 	#projects-container {
 		height: 70vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.project-card {
+		margin: 2%;
+	}
+
+	.project-card-image {
+		height: 50%;
+	}
+
+	.project-card-title {
+		font-size: 1rem;
 	}
 }
