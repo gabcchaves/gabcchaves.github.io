@@ -18,7 +18,7 @@ function displayProjects(projectsContainer = undefined, stack = undefined, searc
 		// Only attempt to display projects if provided stack is valid
 		if (stack == "frontend" || stack == "backend" || stack == "fullstack") {
 			projectsContainer.innerHTML = ""; // Clear projects container
-			for (let i = 0; i < data[stack].length; i++) {
+			for (let i = data[stack].length - 1; i >= 0; i--) {
 				// Displays all possible projects if no search pattern provided
 				if (searchPattern === undefined) {
 					projectsContainer.appendChild(
@@ -46,7 +46,7 @@ function displayProjects(projectsContainer = undefined, stack = undefined, searc
 		} else {
 			// Display projects of all stacks
 			for (let currStack in data) {
-				for (let i = 0; i < data[currStack].length; i++) {
+				for (let i = data[currStack].length - 1; i >= 0; i--) {
 					// Displays all possible projects if no search pattern provided
 					if (searchPattern === undefined) {
 						projectsContainer.appendChild(
