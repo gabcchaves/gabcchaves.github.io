@@ -155,6 +155,12 @@
 			"url": "https://gabcchaves.github.io/time-tracking-dashboard",
 			"img": "https://raw.githubusercontent.com/gabcchaves/time-tracking-dashboard/main/screenshot.png",
 			"description": "Time tracking dashboad."
+		},
+		{
+			"title": "Tip Calculator App",
+			"url": "https://gabcchaves.github.io/tip-calculator-app",
+			"img": "https://raw.githubusercontent.com/gabcchaves/tip-calculator-app/main/screenshot.png",
+			"description": "Tip calculator app."
 		}
 	]
 }

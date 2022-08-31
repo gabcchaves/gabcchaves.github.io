@@ -1,15 +1,6 @@
-[submodule "Testimonials-grid-section"]
-	path = Testimonials-grid-section
-	url = git@github.com:gabcchaves/Testimonials-grid-section.git
 [submodule "Profile-Card-Component"]
 	path = Profile-Card-Component
 	url = git@github.com:gabcchaves/Profile-Card-Component.git
-[submodule "login-page"]
-	path = login-page
-	url = git@github.com:gabcchaves/login-page.git
-[submodule "registration-page"]
-	path = registration-page
-	url = git@github.com:gabcchaves/registration-page.git
 [submodule "qr-code-component"]
 	path = qr-code-component
 	url = git@github.com:gabcchaves/qr-code-component.git
@@ -76,3 +67,15 @@
 [submodule "time-tracking-dashboard"]
 	path = time-tracking-dashboard
 	url = git@github.com:gabcchaves/time-tracking-dashboard.git
+[submodule "registration-page"]
+	path = registration-page
+	url = git@github.com:gabcchaves/registration-page.git
+[submodule "login-page"]
+	path = login-page
+	url = git@github.com:gabcchaves/login-page.git
+[submodule "Testimonials-grid-section"]
+	path = Testimonials-grid-section
+	url = git@github.com:gabcchaves/Testimonials-grid-section.git
+[submodule "tip-calculator-app"]
+	path = tip-calculator-app
+	url = git@github.com:gabcchaves/tip-calculator-app.git
