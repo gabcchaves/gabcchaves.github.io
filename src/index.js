@@ -84,6 +84,12 @@ function createProjectCard(title, url, img, description) {
 	const cardDescription = document.createElement("p");
 	const cardAnchor = document.createElement("a");
 
+	projectCard.classList.add('project-card');
+	cardImg.classList.add('project-card-image');
+	cardTitle.classList.add('project-card-title');
+	cardDescription.classList.add('project-card-description');
+	cardAnchor.classList.add('project-card-anchor');
+
 	cardAnchor.href = url;
 	cardDescription.innerHTML = description;
 	cardTitle.innerHTML = title;
