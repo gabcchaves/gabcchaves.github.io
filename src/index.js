@@ -10,7 +10,7 @@ class ProjectList {
 }
 
 // Display project on projects container
-function displayProjects(projectsContainer = undefined, stack = undefined) {
+function displayProjects(projectsContainer = undefined, stack = undefined, searchPattern = undefined) {
 	// Check if projects container has been defined
 	if (projectsContainer === undefined) return false;
 
@@ -19,27 +19,57 @@ function displayProjects(projectsContainer = undefined, stack = undefined) {
 		if (stack == "frontend" || stack == "backend" || stack == "fullstack") {
 			projectsContainer.innerHTML = ""; // Clear projects container
 			for (let i = 0; i < data[stack].length; i++) {
-				projectsContainer.appendChild(
-					createProjectCard(
-						data[stack][i].title,
-						data[stack][i].url,
-						data[stack][i].img,
-						data[stack][i].description
-					)
-				);
+				// Displays all possible projects if no search pattern provided
+				if (searchPattern === undefined) {
+					projectsContainer.appendChild(
+						createProjectCard(
+							data[stack][i]['title'],
+							data[stack][i]['url'],
+							data[stack][i]['img'],
+							data[stack][i]['description']
+						)
+					);
+				} else {
+					// Displays project if it corresponds to provided search pattern
+					if (data[stack][i]['title'].match(searchPattern, 'gi') != null) {
+						projectsContainer.appendChild(
+							createProjectCard(
+								data[stack][i]['title'],
+								data[stack][i]['url'],
+								data[stack][i]['img'],
+								data[stack][i]['description']
+							)
+						);
+					}
+				}
 			}
 		} else {
 			// Display projects of all stacks
 			for (let currStack in data) {
 				for (let i = 0; i < data[currStack].length; i++) {
-					projectsContainer.appendChild(
-						createProjectCard(
-							data[currStack][i].title,
-							data[currStack][i].url,
-							data[currStack][i].img,
-							data[currStack][i].description
-						)
-					);
+					// Displays all possible projects if no search pattern provided
+					if (searchPattern === undefined) {
+						projectsContainer.appendChild(
+							createProjectCard(
+								data[currStack][i]['title'],
+								data[currStack][i]['url'],
+								data[currStack][i]['img'],
+								data[currStack][i]['description']
+							)
+						);
+					} else {
+						// Displays project if it corresponds to provided search pattern
+						if (data[currStack][i]['title'].match(searchPattern, 'gi')) {
+							projectsContainer.appendChild(
+								createProjectCard(
+									data[currStack][i]['title'],
+									data[currStack][i]['url'],
+									data[currStack][i]['img'],
+									data[currStack][i]['description']
+								)
+							);
+						}
+					}
 				}
 			}
 		}
@@ -78,17 +108,22 @@ function reloadCss() {
 }
 
 // Refresh project list
-function refreshProjectList() {
+function refreshProjectList(searchPattern = undefined) {
 	const projectsContainer = document.getElementById("projects-container");
 	const frontEndCheckBox = document.querySelector("#frontend-checkbox");
 	const backEndCheckBox = document.querySelector("#backend-checkbox");
 	const fullStackCheckBox = document.querySelector("#fullstack-checkbox");
 	projectsContainer.innerHTML = "";
 
-	if (frontEndCheckBox.checked) displayProjects(projectsContainer, "frontend");
-	else if (backEndCheckBox.checked) displayProjects(projectsContainer, "backend");
-	else if (fullStackCheckBox.checked) displayProjects(projectsContainer, "fullstack");
-	else  displayProjects(projectsContainer, undefined);
+	if (frontEndCheckBox.checked) {
+		displayProjects(projectsContainer, "frontend", searchPattern);
+	} else if (backEndCheckBox.checked) {
+		displayProjects(projectsContainer, "backend", searchPattern);
+	} else if (fullStackCheckBox.checked) {
+		displayProjects(projectsContainer, "fullstack", searchPattern);
+	} else {
+		displayProjects(projectsContainer, undefined, searchPattern);
+	}
 }
 
 // Assign elements their respective events
@@ -97,6 +132,7 @@ function loadEvents() {
 	const frontEndCheckBox = document.querySelector("#frontend-checkbox");
 	const backEndCheckBox = document.querySelector("#backend-checkbox");
 	const fullStackCheckBox = document.querySelector("#fullstack-checkbox");
+	const projectSearchField = document.querySelector("#project-search-field");
 
 	frontEndCheckBox.addEventListener("change", () => {
 		refreshProjectList();
@@ -108,6 +144,10 @@ function loadEvents() {
 
 	fullStackCheckBox.addEventListener("change", () => {
 		refreshProjectList();
+	});
+
+	projectSearchField.addEventListener("input", () => {
+		refreshProjectList(projectSearchField.value);
 	});
 }
 
