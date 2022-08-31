@@ -1,97 +1,80 @@
-"use strict";
+'use strict';
 
-// Fix height mobile bug
-window.addEventListener('resize', () => {
-	// We execute the same script as before
-	let vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+// Project list
+class ProjectList {
+	static #projectList = fetch("./projects.json", { "cache": "no-store" } ).then((response) => response.json());
 
-// Feed when page is loaded
-document.addEventListener('DOMContentLoaded', () => {
-	document.getElementById('profile-age').appendChild(document.createTextNode(new Date().getFullYear() - 2002));
-	loadProjects();
-});
-
-// Load projects
-function loadProjects(pattern) {
-	// Remove currently shown projects
-	document.getElementById('project-list').innerHTML = '';
-
-	// Get active stacks
-	let stacks = document.querySelectorAll('input[name=stacks]:checked');
-
-	// If no checkboxes are checked, then display all projects
-	if  (stacks.length == 0) {
-		stacks = document.querySelectorAll('input[name=stacks]');
+	static getProjectList() {
+		return this.#projectList;
 	}
-	
-	// Read projects from JSON and display them on page
-	fetchJSONFile('projects.json', function(data){
-		for (let i = 0; i < stacks.length; i++) {
-			let currStack = data[stacks[i].id];
+}
 
-			// Check whether currStack is defined or not
-			if (currStack === undefined) break;
+// Display project on projects container
+function displayProjects(stack = undefined) {
+	ProjectList.getProjectList().then((data) => {
+		const projectsContainer = document.querySelector("#projects-container");
 
-			// Check for projects based on given pattern
-			if (pattern !== undefined) {
-				let regex = new RegExp(pattern, 'gi');
-				for (let j = currStack.length - 1; j >= 0; j--) {
-					if (regex.test(currStack[j].title)) {
-						document.getElementById('project-list').appendChild(createProjectCard(currStack[j]));
-					}
-				}
-			} else {
-				for (let j = currStack.length - 1; j >= 0; j--) {
-					document.getElementById('project-list').appendChild(createProjectCard(currStack[j]));
+		// Only attempt to display projects if provided stack is valid
+		if (stack == "frontend" || stack == "backend" || stack == "fullstack") {
+			projectsContainer.innerHTML = ""; // Clear projects container
+			for (let i = 0; i < data[stack].length; i++) {
+				projectsContainer.appendChild(
+					createProjectCard(
+						data[stack][i].title,
+						data[stack][i].url,
+						data[stack][i].img,
+						data[stack][i].description
+					)
+				);
+			}
+		} else {
+			// Display projects of all stacks
+			projectsContainer.innerHTML = ""; // Clear projects container
+			for (let currStack in data) {
+				for (let i = 0; i < data[currStack].length; i++) {
+					projectsContainer.appendChild(
+						createProjectCard(
+							data[currStack][i].title,
+							data[currStack][i].url,
+							data[currStack][i].img,
+							data[currStack][i].description
+						)
+					);
 				}
 			}
 		}
 	});
 }
 
-// Create a project card
-function createProjectCard(projectInfo) {
-	// Card image
-	let cardImage = document.createElement("img");
-	cardImage.className = "project-img";
-	cardImage.src = projectInfo.img;
+// Create a project card element
+function createProjectCard(title, url, img, description) {
+	const projectCard = document.createElement("article");
+	const cardImg = document.createElement("img");
+	const cardTitle = document.createElement("h4");
+	const cardDescription = document.createElement("p");
+	const cardAnchor = document.createElement("a");
 
-	// Card description
-	let cardInfo = document.createElement("div");
-	cardInfo.appendChild(document.createElement("h4"));
-	cardInfo.appendChild(document.createElement("p"));
-	cardInfo.appendChild(document.createElement("a"));
+	cardAnchor.href = url;
+	cardDescription.innerHTML = description;
+	cardTitle.innerHTML = title;
+	cardImg.src = img;
 
-	cardInfo.childNodes[0].appendChild(document.createTextNode(projectInfo.title));
-	cardInfo.childNodes[1].appendChild(document.createTextNode(projectInfo.description));
-	cardInfo.childNodes[2].href = projectInfo.url;
-	cardInfo.childNodes[0].className = "project-title";
-	cardInfo.childNodes[1].className = "project-description";
-	cardInfo.childNodes[2].className = "project-link";
-	cardInfo.childNodes[2].classList.add("div-link");
+	projectCard.appendChild(cardImg);
+	projectCard.appendChild(cardTitle);
+	projectCard.appendChild(cardDescription);
+	projectCard.appendChild(cardAnchor);
 
-	// Assemble the card
-	let card = document.createElement("div");
-	card.appendChild(cardImage);
-	card.appendChild(cardInfo);
-	card.className = "project-card";
+	reloadCss();
 
-	return card;
+	return projectCard;
 }
 
-// Fetch project informations from JSON
-function fetchJSONFile(path, callback) {
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = function() {
-        if (httpRequest.readyState === 4) {
-            if (httpRequest.status === 200) {
-                var data = JSON.parse(httpRequest.responseText);
-                if (callback) callback(data);
-            }
-        }
-    };
-    httpRequest.open('GET', path);
-    httpRequest.send(); 
+// Reload CSS
+function reloadCss() {
+	const styleSheets = document.querySelectorAll("link[rel=stylesheet]");
+	for (let i = 0; i < styleSheets; i++) {
+		styleSheets[i].href = "";
+	}
 }
+
+displayProjects();
