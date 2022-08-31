@@ -3,37 +3,37 @@
 		{
 			"title": "Testimonials Grid Section",
 			"url": "https://gabcchaves.github.io/Testimonials-grid-section/",
-			"img": "img/testimonials-grid-section.png",
+			"img": "https://raw.githubusercontent.com/gabcchaves/Testimonials-grid-section/main/screenshot.png",
 			"description": "Testimonials comment."
 		},
 		{
 			"title": "Profile Card Component",
 			"url": "https://gabcchaves.github.io/Profile-Card-Component/",
-			"img": "img/profile-card-component.png",
+			"img": "https://raw.githubusercontent.com/gabcchaves/Profile-Card-Component/main/screenshot.png",
 			"description": "Simple profile card."
 		},
 		{
 			"title": "Login Page",
 			"url": "https://gabcchaves.github.io/login-page/",
-			"img": "img/login-page.png",
+			"img": "https://raw.githubusercontent.com/gabcchaves/login-page/main/screenshot.png",
 			"description": "Simple login page using Bootstrap."
 		},
 		{
 			"title": "Registration Page",
 			"url": "https://gabcchaves.github.io/registration-page/",
-			"img": "img/registration-page.png",
+			"img": "https://raw.githubusercontent.com/gabcchaves/registration-page/main/screenshot.png",
 			"description": "Simple registration page using Bootstrap."
 		},
 		{
 			"title": "NFT Preview Card Component",
 			"url": "https://gabcchaves.github.io/nft-preview-card-component/",
-			"img": "img/nft-preview-card-component.png",
+			"img": "https://raw.githubusercontent.com/gabcchaves/nft-preview-card-component/main/images/preview.png",
 			"description": "Preview card."
 		},
 		{
 			"title": "QR Code Component",
 			"url": "https://gabcchaves.github.io/qr-code-component/",
-			"img": "img/qr-code-component.png",
+			"img": "https://raw.githubusercontent.com/gabcchaves/qr-code-component/8ba7a03ee494d6847af7b069017e13816f57160d/images/preview.png",
 			"description": "Simple QR code card."
 		},
 		{
