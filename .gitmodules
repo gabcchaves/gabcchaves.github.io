@@ -79,3 +79,6 @@
 [submodule "tip-calculator-app"]
 	path = tip-calculator-app
 	url = git@github.com:gabcchaves/tip-calculator-app.git
+[submodule "sunnyside-agency-landing-page"]
+	path = sunnyside-agency-landing-page
+	url = git@github.com:gabcchaves/sunnyside-agency-landing-page.git
