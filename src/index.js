@@ -1,162 +1,101 @@
 'use strict';
 
-// Project list
-class ProjectList {
-	static #projectList = fetch("./projects.json", { "cache": "no-store" } ).then((response) => response.json());
+// Create project card
+function createProjectCard(img, title, description, url) {
+	// Create elements
+	const projectCard = document.createElement("div");
+	const projectCardImageContainer = document.createElement("div");
+	const projectCardImage = document.createElement("img");
+	const projectCardInfoContainer = document.createElement("div");
+	const projectCardTitle = document.createElement("h4");
+	const projectCardDescription = document.createElement("p");
+	const projectCardAnchor = document.createElement("a");
 
-	static getProjectList() {
-		return this.#projectList;
-	}
-}
+	// Set up their attributes
+	projectCardAnchor.href = url;
+	projectCardAnchor.classList.add("project-card-anchor");
+	projectCardDescription.innerHTML = description;
+	projectCardDescription.classList.add("project-card-description");
+	projectCardTitle.innerHTML = title;
+	projectCardTitle.classList.add("project-card-title");
+	projectCardImage.src = img;
+	projectCardImage.classList.add("project-card-image");
+	projectCardImageContainer.classList.add("project-card-image-container");
+	projectCard.classList.add("project-card");
 
-// Display project on projects container
-function displayProjects(projectsContainer = undefined, stack = undefined, searchPattern = undefined) {
-	// Check if projects container has been defined
-	if (projectsContainer === undefined) return false;
+	// Assemble them
+	projectCardInfoContainer.appendChild(projectCardTitle);
+	projectCardInfoContainer.appendChild(projectCardDescription);
+	projectCardImageContainer.appendChild(projectCardImage);
 
-	ProjectList.getProjectList().then((data) => {
-		// Only attempt to display projects if provided stack is valid
-		if (stack == "frontend" || stack == "backend" || stack == "fullstack") {
-			projectsContainer.innerHTML = ""; // Clear projects container
-			for (let i = data[stack].length - 1; i >= 0; i--) {
-				// Displays all possible projects if no search pattern provided
-				if (searchPattern === undefined) {
-					projectsContainer.appendChild(
-						createProjectCard(
-							data[stack][i]['title'],
-							data[stack][i]['url'],
-							data[stack][i]['img'],
-							data[stack][i]['description']
-						)
-					);
-				} else {
-					// Displays project if it corresponds to provided search pattern
-					if (data[stack][i]['title'].match(new RegExp(searchPattern, 'gi')) != null) {
-						projectsContainer.appendChild(
-							createProjectCard(
-								data[stack][i]['title'],
-								data[stack][i]['url'],
-								data[stack][i]['img'],
-								data[stack][i]['description']
-							)
-						);
-					}
-				}
-			}
-		} else {
-			// Display projects of all stacks
-			for (let currStack in data) {
-				for (let i = data[currStack].length - 1; i >= 0; i--) {
-					// Displays all possible projects if no search pattern provided
-					if (searchPattern === undefined) {
-						projectsContainer.appendChild(
-							createProjectCard(
-								data[currStack][i]['title'],
-								data[currStack][i]['url'],
-								data[currStack][i]['img'],
-								data[currStack][i]['description']
-							)
-						);
-					} else {
-						// Displays project if it corresponds to provided search pattern
-						if (data[currStack][i]['title'].match(new RegExp(searchPattern, 'gi'))) {
-							projectsContainer.appendChild(
-								createProjectCard(
-									data[currStack][i]['title'],
-									data[currStack][i]['url'],
-									data[currStack][i]['img'],
-									data[currStack][i]['description']
-								)
-							);
-						}
-					}
-				}
-			}
-		}
-	});
-}
+	projectCard.appendChild(projectCardImageContainer);
+	projectCard.appendChild(projectCardInfoContainer);
+	projectCard.appendChild(projectCardAnchor);
 
-// Create a project card element
-function createProjectCard(title, url, img, description) {
-	const projectCard = document.createElement("article");
-	const cardImg = document.createElement("img");
-	const cardTitle = document.createElement("h4");
-	const cardDescription = document.createElement("p");
-	const cardAnchor = document.createElement("a");
-
-	projectCard.classList.add('project-card');
-	cardImg.classList.add('project-card-image');
-	cardTitle.classList.add('project-card-title');
-	cardDescription.classList.add('project-card-description');
-	cardAnchor.classList.add('project-card-anchor');
-
-	cardAnchor.href = url;
-	cardDescription.innerHTML = description;
-	cardTitle.innerHTML = title;
-	cardImg.src = img;
-
-	projectCard.appendChild(cardImg);
-	projectCard.appendChild(cardTitle);
-	projectCard.appendChild(cardDescription);
-	projectCard.appendChild(cardAnchor);
-
-	reloadCss();
+	// Refresh the stylesheets, so that they receiver correct styles
+	refreshCss();
 
 	return projectCard;
 }
 
-// Reload CSS
-function reloadCss() {
+// Refresh CSS
+function refreshCss() {
 	const styleSheets = document.querySelectorAll("link[rel=stylesheet]");
-	for (let i = 0; i < styleSheets; i++) {
-		styleSheets[i].href = "";
+	for (let i = 0; i < styleSheets.length; i++) {
+		styleSheets[i].href += "";
 	}
 }
 
 // Refresh project list
-function refreshProjectList(searchPattern = undefined) {
-	const projectsContainer = document.getElementById("projects-container");
-	const frontEndCheckBox = document.querySelector("#frontend-checkbox");
-	const backEndCheckBox = document.querySelector("#backend-checkbox");
-	const fullStackCheckBox = document.querySelector("#fullstack-checkbox");
-	projectsContainer.innerHTML = "";
-
-	if (frontEndCheckBox.checked) {
-		displayProjects(projectsContainer, "frontend", searchPattern);
-	} else if (backEndCheckBox.checked) {
-		displayProjects(projectsContainer, "backend", searchPattern);
-	} else if (fullStackCheckBox.checked) {
-		displayProjects(projectsContainer, "fullstack", searchPattern);
-	} else {
-		displayProjects(projectsContainer, undefined, searchPattern);
-	}
+function refreshProjectList(activeStacks, targetContainer) {
+	// Fetch project list
+	fetch("./projects.json")
+		.then((response) => response.json())
+		.then((data) => {
+			// Run through the active stacks
+			for (let stackIndex = 0; stackIndex < activeStacks.length; stackIndex++) {
+				// Run through the stack project list
+				for (let projectIndex = data[activeStacks[stackIndex]].length - 1; projectIndex > 0; projectIndex--) {
+					const project = data[activeStacks[stackIndex]][projectIndex];
+					const projectCard = createProjectCard(
+						project.img,
+						project.title,
+						project.description,
+						project.url
+					);
+					targetContainer.appendChild(projectCard);
+				}
+			}
+		});
 }
 
 // Assign elements their respective events
 function loadEvents() {
-	refreshProjectList();
-	const frontEndCheckBox = document.querySelector("#frontend-checkbox");
-	const backEndCheckBox = document.querySelector("#backend-checkbox");
-	const fullStackCheckBox = document.querySelector("#fullstack-checkbox");
+	// Elements
 	const projectSearchField = document.querySelector("#project-search-field");
+	const stackCheckBoxes = document.querySelectorAll("#stack-checkboxes input[type=checkbox]");
+	const projectsContainer = document.querySelector("#projects-container");
 
-	frontEndCheckBox.addEventListener("change", () => {
-		refreshProjectList();
-	});
+	// Values
+	let activeStacks = [];
+	let projectList;
 
-	backEndCheckBox.addEventListener("change", () => {
-		refreshProjectList();
-	});
-
-	fullStackCheckBox.addEventListener("change", () => {
-		refreshProjectList();
-	});
 
 	projectSearchField.addEventListener("input", () => {
-		refreshProjectList(projectSearchField.value);
 	});
+
+	for (let i = 0; i < stackCheckBoxes.length; i++) {
+		stackCheckBoxes[i].addEventListener("change", () => {
+			if (stackCheckBoxes[i].checked) {
+				activeStacks.splice(i, 0, stackCheckBoxes[i].value); // Add value to array
+			} else {
+				activeStacks.splice(i, 1);
+			}
+			refreshProjectList(activeStacks, projectsContainer);
+		});
+	}
+
+	refreshProjectList(activeStacks, projectsContainer);
 }
 
-/* Things to take effect on every page refresh */
-// Check if any stack checkbox is checked
 loadEvents();
