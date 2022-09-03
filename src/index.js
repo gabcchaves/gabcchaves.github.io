@@ -46,24 +46,59 @@ function refreshCss() {
 	}
 }
 
+// Read stack checkboxes
+function readCheckBoxes(checkBoxes) {
+	let activeStacks = [];
+	for (let cbIndex = 0; cbIndex < checkBoxes.length; cbIndex++) {
+		if (checkBoxes[cbIndex].checked)
+			activeStacks.push(checkBoxes[cbIndex].value);
+	}
+	return activeStacks;
+}
+
 // Refresh project list
 function refreshProjectList(activeStacks, targetContainer) {
+
 	// Fetch project list
 	fetch("./projects.json")
 		.then((response) => response.json())
 		.then((data) => {
-			// Run through the active stacks
-			for (let stackIndex = 0; stackIndex < activeStacks.length; stackIndex++) {
-				// Run through the stack project list
-				for (let projectIndex = data[activeStacks[stackIndex]].length - 1; projectIndex > 0; projectIndex--) {
-					const project = data[activeStacks[stackIndex]][projectIndex];
-					const projectCard = createProjectCard(
-						project.img,
-						project.title,
-						project.description,
-						project.url
-					);
-					targetContainer.appendChild(projectCard);
+
+			// Clear project containers.
+			targetContainer.innerHTML = "";
+
+			// Check if there is any checked stack checkbox.
+			if (activeStacks.length == 0) {
+				
+				// Display projects from all stacks.
+				const availableStacks = Object.getOwnPropertyNames(data);
+				for (const prop in data) {
+					for (let projectIndex = data[prop].length - 1; projectIndex >= 0; projectIndex--) {
+						const projectCard = createProjectCard(
+							data[prop][projectIndex].img,
+							data[prop][projectIndex].title,
+							data[prop][projectIndex].description,
+							data[prop][projectIndex].url
+						);
+						targetContainer.appendChild(projectCard);
+					}
+				}
+			} else {
+				for (let stackIndex = 0; stackIndex < activeStacks.length; stackIndex++) {
+					// Checks if the active stack is found in the projects file.
+					// If so, display their projects.
+					if (data.hasOwnProperty(activeStacks[stackIndex])) {
+						const currStack = data[activeStacks[stackIndex]];
+						for (let projectIndex = currStack.length - 1; projectIndex >= 0; projectIndex--) {
+							const projectCard = createProjectCard(
+								currStack[projectIndex].img,
+								currStack[projectIndex].title,
+								currStack[projectIndex].description,
+								currStack[projectIndex].url
+							);
+							targetContainer.appendChild(projectCard);
+						}
+					}
 				}
 			}
 		});
@@ -77,9 +112,6 @@ function loadEvents() {
 	const projectsContainer = document.querySelector("#projects-container");
 
 	// Values
-	let activeStacks = [];
-	let projectList;
-
 
 	projectSearchField.addEventListener("input", () => {
 	});
@@ -87,15 +119,14 @@ function loadEvents() {
 	for (let i = 0; i < stackCheckBoxes.length; i++) {
 		stackCheckBoxes[i].addEventListener("change", () => {
 			if (stackCheckBoxes[i].checked) {
-				activeStacks.splice(i, 0, stackCheckBoxes[i].value); // Add value to array
+				refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer);
 			} else {
-				activeStacks.splice(i, 1);
+				refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer);
 			}
-			refreshProjectList(activeStacks, projectsContainer);
 		});
 	}
 
-	refreshProjectList(activeStacks, projectsContainer);
+	refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer);
 }
 
 loadEvents();
