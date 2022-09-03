@@ -57,7 +57,7 @@ function readCheckBoxes(checkBoxes) {
 }
 
 // Refresh project list
-function refreshProjectList(activeStacks, targetContainer) {
+function refreshProjectList(activeStacks, targetContainer, searchPattern) {
 
 	// Fetch project list
 	fetch("./projects.json")
@@ -74,13 +74,30 @@ function refreshProjectList(activeStacks, targetContainer) {
 				const availableStacks = Object.getOwnPropertyNames(data);
 				for (const prop in data) {
 					for (let projectIndex = data[prop].length - 1; projectIndex >= 0; projectIndex--) {
-						const projectCard = createProjectCard(
-							data[prop][projectIndex].img,
-							data[prop][projectIndex].title,
-							data[prop][projectIndex].description,
-							data[prop][projectIndex].url
-						);
-						targetContainer.appendChild(projectCard);
+
+						// Checks for search pattern.
+						if (searchPattern != "") {
+							
+							// Creates project card if it matches the provided
+							// search pattern.
+							if (new RegExp(searchPattern, 'gi').test(data[prop][projectIndex].title)) {
+								const projectCard = createProjectCard(
+									data[prop][projectIndex].img,
+									data[prop][projectIndex].title,
+									data[prop][projectIndex].description,
+									data[prop][projectIndex].url
+								);
+								targetContainer.appendChild(projectCard);
+							}
+						} else {
+							const projectCard = createProjectCard(
+								data[prop][projectIndex].img,
+								data[prop][projectIndex].title,
+								data[prop][projectIndex].description,
+								data[prop][projectIndex].url
+							);
+							targetContainer.appendChild(projectCard);
+						}
 					}
 				}
 			} else {
@@ -90,13 +107,30 @@ function refreshProjectList(activeStacks, targetContainer) {
 					if (data.hasOwnProperty(activeStacks[stackIndex])) {
 						const currStack = data[activeStacks[stackIndex]];
 						for (let projectIndex = currStack.length - 1; projectIndex >= 0; projectIndex--) {
-							const projectCard = createProjectCard(
-								currStack[projectIndex].img,
-								currStack[projectIndex].title,
-								currStack[projectIndex].description,
-								currStack[projectIndex].url
-							);
-							targetContainer.appendChild(projectCard);
+
+							// Checks for search pattern.
+							if (searchPattern != "") {
+								
+								// Creates project card if it matches the provided
+								// search pattern.
+								if (new RegExp(searchPattern, 'gi').test(currStack[projectIndex].title)) {
+									const projectCard = createProjectCard(
+										currStack[projectIndex].img,
+										currStack[projectIndex].title,
+										currStack[projectIndex].description,
+										currStack[projectIndex].url
+									);
+									targetContainer.appendChild(projectCard);
+								}
+							} else {
+								const projectCard = createProjectCard(
+									currStack[projectIndex].img,
+									currStack[projectIndex].title,
+									currStack[projectIndex].description,
+									currStack[projectIndex].url
+								);
+								targetContainer.appendChild(projectCard);
+							}
 						}
 					}
 				}
@@ -111,22 +145,21 @@ function loadEvents() {
 	const stackCheckBoxes = document.querySelectorAll("#stack-checkboxes input[type=checkbox]");
 	const projectsContainer = document.querySelector("#projects-container");
 
-	// Values
-
 	projectSearchField.addEventListener("input", () => {
+		refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer, projectSearchField.value);
 	});
 
 	for (let i = 0; i < stackCheckBoxes.length; i++) {
 		stackCheckBoxes[i].addEventListener("change", () => {
 			if (stackCheckBoxes[i].checked) {
-				refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer);
+				refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer, projectSearchField.value);
 			} else {
-				refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer);
+				refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer, projectSearchField.value);
 			}
 		});
 	}
 
-	refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer);
+	refreshProjectList(readCheckBoxes(stackCheckBoxes), projectsContainer, projectSearchField.value);
 }
 
 loadEvents();
