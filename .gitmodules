@@ -82,3 +82,6 @@
 [submodule "sunnyside-agency-landing-page"]
 	path = sunnyside-agency-landing-page
 	url = git@github.com:gabcchaves/sunnyside-agency-landing-page.git
+[submodule "blogr-landing-page"]
+	path = blogr-landing-page
+	url = git@github.com:gabcchaves/blogr-landing-page.git

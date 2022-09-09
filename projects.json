@@ -167,6 +167,12 @@
 			"url": "https://gabcchaves.github.io/sunnyside-agency-landing-page",
 			"img": "https://raw.githubusercontent.com/gabcchaves/sunnyside-agency-landing-page/main/screenshot.png",
 			"description": "Sunnyside agency landing page."
+		},
+		{
+			"title": "Blogr Landing Page",
+			"url": "https://gabcchaves.github.io/blogr-landing-page",
+			"img": "https://raw.githubusercontent.com/gabcchaves/blogr-landing-page/master/screenshot.png",
+			"description": "Blogr landing page."
 		}
 	]
 }
