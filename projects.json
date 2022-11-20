@@ -174,5 +174,13 @@
 			"img": "https://raw.githubusercontent.com/gabcchaves/blogr-landing-page/master/screenshot.png",
 			"description": "Blogr landing page."
 		}
+	],
+	"fullstack": [
+		{
+			"title": "Plantê",
+			"url": "https://github.com/gabcchaves/plante",
+			"img": "",
+			"description": "Sistema de venda de plantas."
+		}
 	]
 }
