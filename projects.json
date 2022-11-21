@@ -181,6 +181,12 @@
 			"url": "https://github.com/gabcchaves/plante",
 			"img": "",
 			"description": "Sistema de venda de plantas."
+		},
+		{
+			"title": "User Manager",
+			"url": "https://gabcchaves.github.io/user-manager",
+			"img": "",
+			"description": "User manager web system. Merely a practise of Rust and Yew framework."
 		}
 	]
 }

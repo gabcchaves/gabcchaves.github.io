@@ -85,3 +85,6 @@
 [submodule "blogr-landing-page"]
 	path = blogr-landing-page
 	url = git@github.com:gabcchaves/blogr-landing-page.git
+[submodule "user-manager"]
+	path = user-manager
+	url = git@github.com:gabcchaves/user-manager.git
