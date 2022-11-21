@@ -1,0 +1,25 @@
+#container-register {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#container-register h1 {
+	font-size: 1.5rem;
+}
+
+#form-register {
+	display: flex;
+	flex-direction: inherit;
+	width: 90%;
+}
+
+#form-register input[type=submit] {
+	margin-bottom: 10%;
+}
+
+@media screen and (min-width: 1081px) {
+	#form-register {
+		width: 30%;
+	}
+}

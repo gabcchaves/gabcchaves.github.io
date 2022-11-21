@@ -184,7 +184,7 @@
 		},
 		{
 			"title": "User Manager",
-			"url": "https://gabcchaves.github.io/user-manager",
+			"url": "https://gabcchaves.github.io/usermanager",
 			"img": "",
 			"description": "User manager web system. Merely a practise of Rust and Yew framework."
 		}

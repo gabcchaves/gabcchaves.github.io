@@ -1,0 +1,16 @@
+#main-header {
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--eminence);
+}
+
+#main-header h1 {
+	margin: 0;
+	color: white;
+}
+
+#main-header img {
+	filter: invert(1);
+}
