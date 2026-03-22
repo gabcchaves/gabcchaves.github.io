@@ -1,0 +1,7 @@
+[book]
+title = "Engineering Notebook"
+authors = ["Gabriel Costa Chaves"]
+language = "en"
+
+[output.html]
+site-url = "/notes/"
