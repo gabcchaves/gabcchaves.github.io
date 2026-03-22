@@ -13,3 +13,7 @@ intermediate level of abstraction that can be used by all the different
 components of a distributed system to communicate through, without compromising
 higher or lower levels of abstraction, which are needed for the inner
 functioning of each component.
+
+The main reason for virtualization in distributed system is to ensure resource
+transparency, since, by emulation, the system can hide from the user the
+absence of harware resources that it seems to have.
